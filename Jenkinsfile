@@ -28,6 +28,8 @@ pipeline {
             steps {
                 echo "Building virtualenv"
                 sh  ''' export PATH=/home/ec2-user/anaconda2/bin:$PATH
+                        conda create --yes -n ${BUILD_TAG} python
+                        source activate ${BUILD_TAG}
                         pip install -r requirements/dev.txt
                     '''
             }
@@ -143,6 +145,7 @@ pipeline {
     }
 
 }
+
 
 
 
