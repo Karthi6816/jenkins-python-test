@@ -1,8 +1,5 @@
 pipeline {
-    agent any 
-   environment {
-    Jenkins_node = "ec2-user@34.228.167.99"
-  }
+    agent { label 'Jenkins-node' }
 
     triggers {
         pollSCM('*/5 * * * 1-5')
@@ -20,7 +17,7 @@ pipeline {
     }
 
     stages {
-
+ 
         stage ("Code pull"){
             steps{
                 checkout scm
@@ -147,5 +144,6 @@ pipeline {
     }
 
 }
+
 
 
