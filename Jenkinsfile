@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent "Jenkins-server"
 
     triggers {
         pollSCM('*/5 * * * 1-5')
@@ -142,4 +142,5 @@ pipeline {
                 recipientProviders: [[$class: 'DevelopersRecipientProvider']])
         }
     }
+
 }
