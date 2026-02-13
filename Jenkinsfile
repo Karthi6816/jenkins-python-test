@@ -1,5 +1,7 @@
 pipeline {
-    agent "Jenkins-server"
+    agent { 
+        "Jenkins-server" 
+    }
 
     triggers {
         pollSCM('*/5 * * * 1-5')
@@ -144,3 +146,4 @@ pipeline {
     }
 
 }
+
