@@ -1,7 +1,8 @@
 pipeline {
-    agent { 
-        "Jenkins-server" 
-    }
+    agent any 
+   environment {
+    Jenkins_node = "ec2-user@34.228.167.99"
+  }
 
     triggers {
         pollSCM('*/5 * * * 1-5')
@@ -146,4 +147,5 @@ pipeline {
     }
 
 }
+
 
